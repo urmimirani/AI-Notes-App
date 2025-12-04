@@ -1,0 +1,34 @@
+/* App-specific styles */
+/* Note: Most styles are handled by Tailwind CSS in index.css */
+
+/* Content editable area should allow text selection */
+[contenteditable="true"] {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Ensure proper rendering for rich text editor */
+[contenteditable="true"]:focus {
+  outline: none;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, select, textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Prevent layout shift from loading states */
+.loading-skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
